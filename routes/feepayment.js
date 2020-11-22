@@ -31,7 +31,7 @@ router.get("/", checkAuth, async (req, res) => {
   params["ORDER_ID"] = shortid.generate();
   params["CUST_ID"] = user.id;
   params["TXN_AMOUNT"] = "100";
-  params["CALLBACK_URL"] = `http://localhost:${PORT}/callback`;
+  params["CALLBACK_URL"] = `https://yf2.herokuapp.com/callback`;
   params["EMAIL"] = user.email;
   params["MOBILE_NO"] = user.phone;
 
