@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>You Forever - Login Page</title>
+    <%- include('./partials/head') %>
+    <style>
+      nav .navlogin {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header><%- include('./partials/header') %></header>
+      <main class="login-container">
+        <div class="login-img-container">
+          <h1>Login</h1>
+          <img src="/login.svg" alt="Login" class="login-img" />
+        </div>
+        <form action="/login" method="POST" class="login-form">
+          <div class="formgroup">
+            <p style="color: red; font-size: 13px; position: absolute; top: 0">
+              <%=message%> <%=data%>
+            </p>
+            <label for="loginemail">Email: </label>
+            <input
+              type="email"
+              placeholder="asdf@test.com"
+              autofocus
+              required
+              name="email"
+              autocomplete="username"
+              id="loginemail"
+            />
+          </div>
+          <div class="formgroup">
+            <label for="loginpassword">Password: </label>
+            <input
+              type="password"
+              name="password"
+              id="loginpassword"
+              autocomplete="current-password"
+              required
+              placeholder="********"
+            />
+          </div>
+          <input type="submit" value="Login" />
+          <p>
+            <a href="/forgotpassword">Forgot Password?</a> or Not a User?
+            <a href="/register">Sign Up</a>
+          </p>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

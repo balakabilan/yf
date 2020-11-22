@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>You Forever - Dashboard</title>
+    <%- include('./partials/head.ejs') %>
+  </head>
+  <body>
+    <div class="container dashboard-container">
+      <header><%- include("./partials/dashboardheader.ejs") %></header>
+      <main class="dashboard-main">
+        <div class="dashboard-hero-info">
+          <h1>Welcome, <%=user.name%></h1>
+          <div class="personal-info-container">
+            <div class="personal-info-div">
+              <p>E-Mail:</p>
+              <p id="p-email"><%=user.email%></p>
+            </div>
+            <div class="address">
+              <p>Address:</p>
+              <p><%=user.address%> <%=user.pincode%></p>
+            </div>
+            <div class="phone">
+              <p>Phone:</p>
+              <p><%=user.phone%></p>
+            </div>
+            <div class="personal-info-div">
+              <p>Height:</p>
+              <p id="p-height"><%=user.height%> cm</p>
+            </div>
+            <div class="personal-info-div">
+              <p>Weight:</p>
+              <p id="p-weight"><%=user.weight%> kg</p>
+            </div>
+            <div class="personal-info-div">
+              <p>Age:</p>
+              <p id="p-age"><%=user.age%></p>
+            </div>
+          </div>
+          <a href="/editinfo">Edit Info</a>
+          <a href="/changepassword">Change Password</a>
+        </div>
+        <div class="plan">
+          <div class="current-plan">
+            <h2>Bills and Payments</h2>
+            <p class="bill-amount">Monthly Fee: <span>₹ 2999</span></p>
+            <p class="outstanding">
+              outstanding:
+              <span> ₹ <%= user.outstanding? user.outstanding : 0 %> </span>
+            </p>
+            <p class="nextdue">
+              Next Billing Date:
+              <span> <%=user.nextBDate || '15/12/2020' %> </span>
+            </p>
+            <a href="/feepayment">
+              <%= user.outstanding? 'pay now' : 'pay in advance' %>
+            </a>
+          </div>
+        </div>
+        <div class="merch">
+          <a href="/shop">Visit Our Shop &#128279;</a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

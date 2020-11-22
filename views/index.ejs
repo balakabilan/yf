@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>You Forever - Easy Gym account management</title>
+    <%- include('./partials/head.ejs') %>
+    <style>
+      nav .home {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header><%- include('./partials/header.ejs') %></header>
+      <main>
+        <section class="hero-section">
+          <div class="hero-img-container">
+            <img src="/1.svg" alt="Background Image" class="hero-img" />
+          </div>
+          <div class="hero-info">
+            <h1>PREMIER 24 HOUR GYM</h1>
+            <p>
+              Cardio machines, weights, body-weight training equipment, and yoga
+              classes to help bring your training to the next level.
+            </p>
+            <a href="/register" class="cta">Join Now</a>
+          </div>
+        </section>
+        <div class="sectionandlogin">
+          <section class="about">
+            <h2>About</h2>
+            <div class="about-info">
+              <p>
+                YouForever focuses on placing its attendees in different
+                classes, and after a class you to find out how you performed.
+                YouForever has excellent facilities such as a smoothie bar,
+                superlative lockers, and a lounge.
+              </p>
+              <p>
+                This gym offers one of the best indoor climbing services in the
+                country. Moreover, it has the best strength training and cardio
+                equipment, which help improve the climbing abilities of its
+                clientele. Our website has a clear, chic design; with social
+                media links prominently displayed on our home page. Moreover, we
+                show full contact information on the home page; and this builds
+                its credibility and enables new clients to inquire more about
+                the services of the gym effectively.
+              </p>
+            </div>
+          </section>
+          <section class="login">
+            <h2>Login</h2>
+            <form action="/login" method="POST">
+              <div class="formgroup">
+                <label for="loginemail"> Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="loginemail"
+                  placeholder="e.g youforever@youmail.com"
+                  autocomplete="username"
+                  required
+                />
+              </div>
+              <div class="formgroup">
+                <label for="loginpass">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="loginpass"
+                  placeholder="******"
+                  autocomplete="current-password"
+                  required
+                />
+              </div>
+              <input type="submit" value="Login" />
+            </form>
+          </section>
+        </div>
+        <section class="contact-section" id="contact">
+          <div class="contact-info">
+            <h2>Contact us</h2>
+            <ul class="conul">
+              <li class="conli"><b>Address:</b> 123,Boston road, Chicago.</li>
+              <li><b>Phone: </b>+91 12345 54321</li>
+              <li><b>Mail: </b>contact@youforever.com</li>
+            </ul>
+          </div>
+          <div class="contact-img-container">
+            <img src="/contact.svg" alt="Contact" class="contact-img" />
+          </div>
+        </section>
+      </main>
+      <footer><%- include('./partials/footer') %></footer>
+    </div>
+  </body>
+</html>

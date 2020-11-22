@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>You Forever - Dashboard || Edit Information</title>
+    <%- include("./partials/head.ejs") %>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <header><%- include("./partials/dashboardheader.ejs") %></header>
+      </header>
+      <main class="editinfo">
+        <h1>Edit Your Information</h1>
+        <p id="edit-message"><%=message%></p>
+        <form action="/editinfo" method="POST">
+          <div class="formgroup">
+            <label for="editname">Name</label>
+            <input
+              required
+              type="text"
+              name="editname"
+              id="editname"
+              value="<%=user.name%>"
+            />
+          </div>
+          <div class="formgroup">
+            <label for="editphone">Phone</label>
+            <input
+              required
+              type="text"
+              name="editphone"
+              id="editphone"
+              value="<%=user.phone%>"
+            />
+          </div>
+          <div class="formgroup">
+            <label for="editaddress">Address</label>
+            <input
+              required
+              type="text"
+              name="editaddress"
+              id="editaddress"
+              value="<%=user.address%>"
+            />
+          </div>
+          <div class="formgroup">
+            <label for="editpincode">Pincode</label>
+            <input
+              required
+              type="text"
+              name="editpincode"
+              id="editpincode"
+              value="<%=user.pincode%>"
+            />
+          </div>
+          <div class="formgroup">
+            <label for="editheight">height</label>
+            <input
+              required
+              type="text"
+              name="editheight"
+              id="editheight"
+              value="<%=user.height%>"
+            />
+          </div>
+          <div class="formgroup">
+            <label for="editweight">weight</label>
+            <input
+              required
+              type="text"
+              name="editweight"
+              id="editweight"
+              value="<%=user.weight%>"
+            />
+          </div>
+          <div class="formgroup">
+            <label for="editage">age</label>
+            <input
+              required
+              type="text"
+              name="editage"
+              id="editage"
+              value="<%=user.age%>"
+            />
+          </div>
+          <div class="editinfo-btn">
+            <input type="submit" value="Submit" />
+            <a href="/dashboard/<%=user.id%>">Cancel</a>
+            <a class="editback" href="/dashboard/<%=user.id%>">Back </a>
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>You Forever - Register a new account</title>
+    <%- include('./partials/head') %>
+    <style>
+      nav .register {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header><%- include('./partials/header') %></header>
+      <main class="register-container">
+        <div class="register-img-container">
+          <h1>Register a new account</h1>
+          <img src="/signup.svg" class="register-img" alt="Error" />
+          <p>
+            *After successful registration, you'll be able to login into your
+            Dashboard
+          </p>
+        </div>
+        <form action="/register" method="POST" class="register-form">
+          <p style="color: red; font-size: 13px"><%=message%></p>
+          <div class="formgroup">
+            <label for="name">Name: <sup>*</sup> </label>
+            <input
+              type="text"
+              required
+              autofocus
+              name="name"
+              placeholder="John Doe"
+              id="name"
+            />
+          </div>
+          <div class="formgroup">
+            <label for="email">Email:<sup>*</sup> </label>
+            <input
+              type="email"
+              name="email"
+              placeholder="asdf@test.com"
+              required
+              autocomplete="username"
+              id="email"
+            />
+          </div>
+          <div class="formgroup">
+            <label for="password">Password:<sup>*</sup> </label>
+            <input
+              type="password"
+              name="password"
+              autocomplete="current-password"
+              placeholder="********"
+              required
+              id="password"
+            />
+          </div>
+          <div class="formgroup">
+            <label for="address">Address:<sup>*</sup> </label>
+            <input
+              type="address"
+              name="address"
+              placeholder="********"
+              required
+              id="address"
+            />
+          </div>
+          <div class="formgroup">
+            <label for="pincode">Pincode:<sup>*</sup> </label>
+            <input
+              type="pincode"
+              name="pincode"
+              placeholder="********"
+              required
+              id="pincode"
+            />
+          <div class="formgroup">
+            <label for="phone">Phone:<sup>*</sup> </label>
+            <input
+              type="phone"
+              name="phone"
+              placeholder="12345 54321"
+              required
+              id="phone"
+            />
+          </div>
+          <div class="formgroup">
+            <label for="age">age<sup>*</sup></label>
+            <input type="number" name="age" placeholder="27" id="age" />
+          </div>
+          <div class="formgroup">
+            <label for="height">Height: (in cm)</label>
+            <input type="number" name="height" placeholder="175" id="height" />
+          </div>
+          <div class="formgroup">
+            <label for="weight">Weight: (in kg)</label>
+            <input type="number" name="weight" placeholder="68" id="weight" />
+          </div>
+          <input type="submit" value="Register" />
+          <p>Already a user? <a href="/login">Sign in</a></p>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
