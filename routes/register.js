@@ -29,10 +29,11 @@ router.post("/", async (req, res) => {
       password: hashedPassword,
       phone: req.body.phone,
       address: req.body.address,
+      pincode: req.body.pincode,
       height: req.body.height,
       weight: req.body.weight,
       age: req.body.age,
-      id: await shortid.generate(),
+      id: shortid.generate(),
     };
     let user = await User.create(newUser);
     if (user) {
