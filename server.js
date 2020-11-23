@@ -58,4 +58,6 @@ app.use("/editinfo", require(__dirname + "/routes/editinfo.js"));
 app.use("/feepayment", require(__dirname + "/routes/feepayment.js"));
 app.use("/changepassword", require(__dirname + "/routes/changepassword.js"));
 app.use("/callback", require(__dirname + "/routes/callback.js"));
+app.use("/adminlogin", require(__dirname + "/routes/adminlogin.js"));
+
 app.listen(PORT, () => console.log(`server running on PORT: ${PORT}`));
