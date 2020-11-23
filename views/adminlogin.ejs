@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>You Forever - Admin Login</title>
+    <%-include('./partials/head.ejs')%>
+  </head>
+  <body>
+    <div class="container">
+      <header><%-include('./partials/header.ejs')%></header>
+      <main class="admin-login">
+        <form action="/adminlogin" method="post">
+          <h2>Admin Login</h2>
+          <p style="color: red; font-size: 14px"><%=message%></p>
+          <div class="formgroup">
+            <label for="adminemail">Admin Email</label>
+            <input
+              type="email"
+              name="adminemail"
+              id="adminemail"
+              autocomplete="username"
+              required
+            />
+          </div>
+          <div class="formgroup">
+            <label for="adminpassword">Admin Password</label>
+            <input
+              type="password"
+              name="adminpassword"
+              id="adminpassword"
+              required
+              autocomplete="current-password"
+            />
+          </div>
+          <input type="submit" value="Login" />
+        </form>
+      </main>
+    </div>
+  </body>
+</html>
